@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    button {
+      width: 170px;
+      height: 100px;
+      line-height: 100px;
+      margin: 3em auto;
+      transition: all 0.2s ease-in-out;
+    }
+    #d1{
+      background: rgba(75, 57, 120, .4);
+    }
+  </style>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("d1");
+      x.style.transform = "rotate(90deg)";
+    }
+
+    function myFunction2() {
+      var x = document.getElementById("d2");
+      x.style.transform = "translateX(20px)";
+    }
+    function myFunction3() {
+      var x = document.getElementById("d3");
+      x.style.transform = "scale(1.1)";
+    }
+  </script>
+</head>
+<body>
+
+  <button id="d1" onclick="myFunction()"></button><br>
+  <button id="d2" onclick="myFunction2()"></button><br>
+  <button id="d3" onclick="myFunction3()"></button><br>
+
+</body>
+</html>

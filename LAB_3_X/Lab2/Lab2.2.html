@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #pic{
+      margin: 40px;
+    }
+    img {
+      width: 20%;
+      height: 20%;
+      box-shadow: -5px -5px 5px 2px red,
+                  0px 5px 5px 2px rgba(122,122,122,0.6),
+                  5px -5px 5px 2px rgba(255,255,122,0.9);
+      transition-property: width, box-shadow, height;
+    }
+    img:hover {
+      width: 30%;
+      height: 30%;
+      box-shadow: -5px -5px 5px 2px rgba(0,255,45,0.6),
+                  0px 5px 5px 2px rgba(0,255,45,0.6),
+                  5px 0px 5px 2px rgba(0,255,122,0.9);
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <img id="pic" src="../../Chess/IMG_20180807_130154.jpg" height="20%" width="20%"/>
+  </div>
+</body>
+</html>
+

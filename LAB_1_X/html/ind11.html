@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div class="form-wrap">
+  <div class="profile"><img src="https://html5book.ru/wp-content/uploads/2016/10/profile-image.png">
+    <h1>Регистрация</h1>
+  </div>
+  <form method="post" action="form.php">
+    <div>
+      <label>ФИО</label>
+      <input type="text" name="name" required>
+    </div>
+    <div>
+      <label>Телефон</label>
+      <input type="number" name="name" required>
+    </div>
+    <div>
+      <label>email</label>
+      <input type="email" name="name" required>
+    </div>
+    <div>
+      <label>Пароль</label>
+      <input type="password" name="name" required>
+    </div>
+    <div class="radio">
+      <span>Пол</span><br>
+      <label>
+        <input type="radio" name="sex" value="мужской">мужской
+        <div class="radio-control male"></div>
+      </label>
+      <label>
+        <input type="radio" name="sex" value="женский">женский
+        <div class="radio-control female"></div>
+      </label>
+    </div>
+    <div><br>
+      <label>Страна</label>
+      <select name="country">
+        <option>Выберите страну проживания</option>
+        <option value="Россия">Россия</option>
+        <option value="Украина">Украина</option>
+        <option value="Беларусь">Беларусь</option>
+      </select>
+      <div class="select-arrow"></div>
+    </div><br>
+    <button type="submit">Отправить</button>
+  </form>
+</div>
+</body>
+</html>

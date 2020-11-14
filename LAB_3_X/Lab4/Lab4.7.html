@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Обязательные поля формы</title>
+  <style>
+    body {
+      padding: 5px;
+      font-size: 20px;
+    }
+
+    input[type="number"] {
+      width: 50px;
+    }
+
+    .required {
+      display: inline-block;
+      height: 24px;
+      width: 24px;
+      margin: 5px 0 -7px 1px;
+      background: url(https://loading.io/s/icon/jxjyiv.svg) 0 0 no-repeat;
+    }
+    input[required]:valid + label {
+      background: url(https://upload.wikimedia.org/wikipedia/commons/0/0d/Google_Material_Design_check.svg) 0 0 no-repeat;
+    }
+  </style>
+</head>
+<body>
+<form action="">
+  <p>Пожалуйста, заполните обязательные поля.</p>
+  <label>Имя: </label><input type="text" required pattern="Shureck"><label class="required"></label><br />
+  <label>Возраст: </label><input type="number"><label></label><br />
+  <label>E-mail: </label><input type="email" required><label class="required"></label><br />
+  <label>Сайт: </label><input type="text"><label></label><br />
+  <input type="submit">
+</form>
+</body>
+</html>

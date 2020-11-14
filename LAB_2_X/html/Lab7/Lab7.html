@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    window.onload = function() {
+      var drawingCanvas = document.getElementById('Circle');
+      if(drawingCanvas && drawingCanvas.getContext) {
+        var context = drawingCanvas.getContext('2d');
+        // Рисуем окружность
+        context.strokeStyle = "#000";
+        context.fillStyle = "#fc0";
+        context.beginPath();
+        context.arc(100,100,50,0,Math.PI*2,true);
+        context.closePath();
+        context.stroke();
+        context.fill();
+
+        context.strokeStyle = "#000";
+        context.fillStyle = "#fcF";
+        context.beginPath();
+        context.arc(100,100,40,0,Math.PI*2,true);
+        context.closePath();
+        context.stroke();
+        context.fill();
+      }
+    }
+  </script>
+</head>
+<body>
+  <p>Левандровский А.М.
+  <canvas id="Circle" width="200" height="200"></canvas>
+  </p>
+</body>
+</html>

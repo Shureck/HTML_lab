@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      //Скрыть PopUp при загрузке страницы
+      PopUpHide();
+    });
+    //Функция отображения PopUp
+    function PopUpShow(){
+      $("#popup1").show();
+    }
+    //Функция скрытия PopUp
+    function PopUpHide(){
+      $("#popup1").hide();
+    }
+  </script>
+  <link rel="stylesheet" href="../css/ind7.css">
+</head>
+<body>
+  <button class="btn" onclick="PopUpShow()"> tab </button>
+  <div class="b-popup" id="popup1">
+    <div class="b-popup-content">
+      Test
+      <a href="javascript:PopUpHide()">close</a>
+    </div>
+  </div>
+</body>
+</html>

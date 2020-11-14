@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script data-require="jquery@*" data-semver="2.1.4" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <style>
+    table{
+      background: #eeeeee;
+    }
+    .white{
+      background: #f0d9b5;
+    }
+    .black{
+      background: #b58863;
+    }
+    td{
+      width: 5em;
+      height: 5em;
+      text-align: center;
+    }
+  </style>
+  <script>
+
+    class Queen {
+      #nameValue
+      #x
+      #y
+
+      constructor(name, x, y) {
+        this._nameValue = name;
+        this._x = x;
+        this._y = y;
+      }
+
+
+      get nameValue() {
+        return this._nameValue;
+      }
+
+      set nameValue(value) {
+        this._nameValue = value;
+      }
+
+      get x() {
+        return this._x;
+      }
+
+      set x(value) {
+        this._x = value;
+      }
+
+      get y() {
+        return this._y;
+      }
+
+      set y(value) {
+        this._y = value;
+      }
+
+
+      canmove(x_new,y_new){
+        console.debug(""+(Math.abs(x_new-this._x)/Math.abs(y_new-this._y)));
+        if(x_new == this._x && y_new == this._y){
+          return false;
+        }
+        if(((x_new - this._x)*(y_new-this._y) == 0) || (Math.abs(x_new-this._x)/Math.abs(y_new-this._y) == 1)){
+          this._x = x_new;
+          this._y = y_new;
+          return true;
+        }
+        else{
+          return false;
+        }
+      }
+    }
+
+
+
+    var xx = -1;
+    var yy = -1;
+    var check = false;
+
+    queen = new Queen("<img src=\"cifra.jpg\" height=\"50\" width=\"50\"/>", 8, 5)
+
+    window.onload = function() {
+      var second = document.getElementById("myTable").rows[queen.x].cells[queen.y];
+      second.innerHTML = queen.nameValue;
+    };
+
+    $(function () {
+      $('td').on('click', function () {
+        var $td = $(this),
+          $tr = $td.parent();
+
+        if(!check && document.getElementById("myTable").rows[$tr.index()].cells[$td.index()].innerHTML != ""){
+          xx = $tr.index();
+          yy = $td.index();
+          check = true;
+        }
+        else {
+          if(check && queen.canmove($tr.index(),$td.index()) == true) {
+            console.debug("test");
+            var first = document.getElementById("myTable").rows[xx].cells[yy];
+            first.innerHTML = "";
+            var second = document.getElementById("myTable").rows[queen.x].cells[queen.y];
+            second.innerHTML = queen.nameValue;
+            check = false;
+          }
+          else{
+            console.debug("mimo");
+            check = false;
+          }
+        }
+      });
+    });
+
+    document.querySelector('table').onclick = (event) => {
+      let cell = event.target;
+      if (cell.tagName.toLowerCase() != 'td')
+        return;
+      let i = cell.parentNode.rowIndex;
+      let j = cell.cellIndex;
+      console.log(i, j);
+    }
+
+    $('td').dblclick(function() {
+      $(this).append($('img'));
+    });
+
+    function addStr() {
+      var x = document.getElementById("myTable");
+      document.body.appendChild(x);
+      var elem1 = document.createElement("img");
+      elem1.setAttribute('src','cifra.jpg');
+      elem1.setAttribute('alt','картинка');
+      document.body.children[1].children[0].appendChild(elem1);
+    }
+    </script>
+</head>
+<body>
+<table border="1px" id="myTable">
+  <tr>
+    <td></td>
+    <td class="lett">a</td>
+    <td class="lett">b</td>
+    <td class="lett">c</td>
+    <td class="lett">d</td>
+    <td class="lett">e</td>
+    <td class="lett">f</td>
+    <td class="lett">g</td>
+    <td class="lett">h</td>
+  </tr>
+  <tr>
+    <td class="lett">8</td>
+    <td class="white"></td>
+    <td class="black"></td>
+    <td class="white"></td>
+    <td class="black"></td>
+    <td class="white"></td>
+    <td class="black"></td>
+    <td class="white"></td>
+    <td class="black"></td>
+  </tr>
+  <tr>
+    <td class="lett">7</td>
+    <td class="black"></td>
+    <td class="white"></td>
+    <td class="black"></td>
+    <td class="white"></td>
+    <td class="black"></td>
+    <td class="white"></td>
+    <td class="black"></td>
+    <td class="white"><img src="IMG_20180807_130154.jpg" height="50" width="50"/></td>
+  </tr>
+  <tr>
+    <td class="lett">6</td>
+    <td class="white"></td>
+    <td class="black"></td>
+    <td class="white"></td>
+    <td class="black"></td>
+    <td class="white"></td>
+    <td class="black"></td>
+    <td class="white"></td>
+    <td class="black"></td>
+  </tr>
+  <tr>
+    <td class="lett">5</td>
+    <td class="black"></td>
+    <td class="white"></td>
+    <td class="black"></td>
+    <td class="white"></td>
+    <td class="black"></td>
+    <td class="white"></td>
+    <td class="black"></td>
+    <td class="white"></td>
+  </tr>
+  <tr>
+    <td class="lett">4</td>
+    <td class="white"></td>
+    <td class="black"></td>
+    <td class="white"></td>
+    <td class="black"></td>
+    <td class="white"></td>
+    <td class="black"></td>
+    <td class="white"></td>
+    <td class="black"></td>
+  </tr>
+  <tr>
+    <td class="lett">3</td>
+    <td class="black"></td>
+    <td class="white"></td>
+    <td class="black"></td>
+    <td class="white"></td>
+    <td class="black"></td>
+    <td class="white"></td>
+    <td class="black"></td>
+    <td class="white"></td>
+  </tr>
+  <tr>
+    <td class="lett">2</td>
+    <td class="white"></td>
+    <td class="black"></td>
+    <td class="white"></td>
+    <td class="black"></td>
+    <td class="white"></td>
+    <td class="black"></td>
+    <td class="white"></td>
+    <td class="black"></td>
+  </tr>
+  <tr>
+    <td class="lett">1</td>
+    <td class="black"></td>
+    <td class="white"></td>
+    <td class="black"></td>
+    <td class="white"></td>
+    <td class="black"></td>
+    <td class="white"></td>
+    <td class="black"></td>
+    <td class="white"></td>
+  </tr>
+</table>
+<button onclick="addStr()">Test</button>
+</body>
+</html>

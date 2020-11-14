@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <meta charset="utf-8">
+  <title>Получение объекта события</title>
+  <style>
+    td,th{border: 1px double #DC0DCE;}
+    table{border:3px solid #D81114;background:#FDA7A8;}
+  </style>
+</head>
+
+<body>
+<script type="text/javascript">
+  var newTable = document.createElement('table');
+  newTable.id = 'tablell';
+  newTable.setAttribute('width','70%');
+  newTable.setAttribute('border','3');
+  newTable.setAttribute('align','center');
+  document.body.appendChild(newTable);
+
+  for(var i = 0; i < 5; ++i){
+    var newTr = document.createElement('tr');
+    document.body.children[1].appendChild(newTr);
+
+    for(var j = 0; j < 3; ++j){
+      var newTd = document.createElement('td');
+      document.body.children[1].children[i].appendChild(newTd);
+      newTd.innerHTML = 'Ячейка';
+    }
+  }
+
+  var elem1 = document.createElement("img");
+  elem1.setAttribute('src','cifra.jpg');
+  elem1.setAttribute('alt','картинка');
+  document.body.children[1].children[0].children[0].appendChild(elem1);
+
+  $('td').dblclick(function() {
+    $(this).append($('img'));
+  });
+</script>
+</body>
+</html>
